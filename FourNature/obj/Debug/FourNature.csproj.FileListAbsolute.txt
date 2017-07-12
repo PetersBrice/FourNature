@@ -1,1 +1,10 @@
 c:\users\axel\documents\visual studio 2015\Projects\FourNature\FourNature\bin\Debug\FourNature.exe.config
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\obj\Debug\FourNature.csprojResolveAssemblyReference.cache
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\obj\Debug\FourNature.Properties.Resources.resources
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\obj\Debug\FourNature.csproj.GenerateResource.Cache
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\bin\Debug\FourNature.exe
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\bin\Debug\FourNature.pdb
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\obj\Debug\FourNature.vue.Accueil.resources
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\obj\Debug\FourNature.exe
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\obj\Debug\FourNature.pdb
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\obj\Debug\FourNature.vue.Fournisseur.resources

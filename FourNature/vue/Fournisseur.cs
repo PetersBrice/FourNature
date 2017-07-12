@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FourNature.vue
 {
-    public partial class Fourniture : Form
+    public partial class Fournisseur : Form
     {
-        public Fourniture()
+        public Fournisseur()
         {
             InitializeComponent();
         }
