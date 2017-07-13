@@ -1,6 +1,6 @@
 ﻿namespace FourNature.vue
 {
-    partial class Fourniture
+    partial class Fournisseur
     {
         /// <summary>
         /// Required designer variable.

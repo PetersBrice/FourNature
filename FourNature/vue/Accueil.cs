@@ -16,5 +16,15 @@ namespace FourNature.vue
         {
             InitializeComponent();
         }
+
+        private void Accueil_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
