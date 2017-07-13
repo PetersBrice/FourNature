@@ -1,1 +1,2 @@
 c:\users\axel\documents\visual studio 2015\Projects\FourNature\FourNature\bin\Debug\FourNature.exe.config
+C:\Users\Brice\Documents\Visual Studio 2015\Projects\FourNature\FourNature\bin\Debug\FourNature.exe.config
