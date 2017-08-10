@@ -88,6 +88,12 @@
     <EmbeddedResource Include="vue\Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="vue\Client.resx">
+      <DependentUpon>Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vue\Commande.resx">
+      <DependentUpon>Commande.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vue\Fournisseur.resx">
       <DependentUpon>Fournisseur.cs</DependentUpon>
     </EmbeddedResource>

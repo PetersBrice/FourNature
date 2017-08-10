@@ -1,6 +1,6 @@
 ﻿namespace FourNature.vue
 {
-    partial class Fournisseur
+    partial class FournisseurVue
     {
         /// <summary>
         /// Required designer variable.
@@ -328,6 +328,7 @@
             this.AdresseLabel.TabIndex = 1;
             this.AdresseLabel.Text = "Adresse";
             this.AdresseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AdresseLabel.Click += new System.EventHandler(this.AdresseLabel_Click);
             // 
             // NumérosFournisseur
             // 
@@ -579,13 +580,13 @@
             this.SupprimerArticle.Text = "Supprimer";
             this.SupprimerArticle.UseVisualStyleBackColor = true;
             // 
-            // Fourniture
+            // Fournisseur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 366);
             this.Controls.Add(this.panel1);
-            this.Name = "Fourniture";
+            this.Name = "Fournisseur";
             this.Text = "Fourniture";
             this.Load += new System.EventHandler(this.Fourniture_Load);
             this.panel1.ResumeLayout(false);

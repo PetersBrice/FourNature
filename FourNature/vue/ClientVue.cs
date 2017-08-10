@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FourNature.vue
 {
-    public partial class Client : Form
+    public partial class ClientVue : Form
     {
-        public Client()
+        public ClientVue()
         {
             InitializeComponent();
         }

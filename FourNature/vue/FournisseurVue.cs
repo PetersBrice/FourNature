@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FourNature.vue
 {
-    public partial class Fournisseur : Form
+    public partial class FournisseurVue : Form
     {
-        public Fournisseur()
+        public FournisseurVue()
         {
             InitializeComponent();
         }
@@ -98,6 +98,11 @@ namespace FourNature.vue
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdresseLabel_Click(object sender, EventArgs e)
         {
 
         }

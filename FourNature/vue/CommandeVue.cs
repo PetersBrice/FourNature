@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace FourNature.vue
 {
-    public partial class Accueil : Form
+    public partial class CommandeVue : Form
     {
-        public Accueil()
+        public CommandeVue()
         {
             InitializeComponent();
         }
 
-        private void Accueil_Load(object sender, EventArgs e)
+        private void Commande_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
