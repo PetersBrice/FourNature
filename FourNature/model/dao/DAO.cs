@@ -14,6 +14,11 @@ namespace FourNature.model.dao
 
         public DAO()
         {
+            
+        }
+
+        protected static void connect()
+        {
             //add here your connection details
             String connectionString = "../../ressource/DreamFloreDB10.mdb";
 
@@ -21,11 +26,14 @@ namespace FourNature.model.dao
             _connection = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + connectionString);
             _connection.Open();
         }
-        public abstract Boolean create(T obj);
-        public abstract Boolean delete(T obj);
-        public abstract Boolean update(T obj);
-        public abstract T select(String fourn);
 
-       
+        public abstract Boolean create(T obj);
+        public abstract void delete(String s);
+        public abstract Boolean update(T obj);
+        public abstract T select(String s);
+        public abstract List<T> selectAll();
+        public abstract List<T> selectAvecParam(String s);
+
+
     }
 }

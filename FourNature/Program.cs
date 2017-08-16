@@ -1,6 +1,7 @@
-﻿using FourNature.model.dao;
+﻿using FourNature.model;
+using FourNature.model.dao;
 using FourNature.model.metier;
-
+using FourNature.vue;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,17 +19,12 @@ namespace FourNature
         [STAThread]
         static void Main()
         {
-
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Accueil());
-
-            DAO<Fournisseur> FournisseurDAO = DAOFactory.getFournisseurDAO();
-            Fournisseur fournisseur = FournisseurDAO.select("BIOVERT");
-
-            Debug.WriteLine("" + fournisseur.Nom.ToString());
-            
-            
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Model model = Model.Instance();
+            model.Initialize();
+            model.getFournisseurVue();                                    
+            Application.Run(model.FournVue);                        
         }
     }
 }

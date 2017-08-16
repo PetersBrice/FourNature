@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FourNature.model.dao
 {
@@ -18,18 +19,38 @@ namespace FourNature.model.dao
             return false;
         }
 
-        public override bool delete(Fournisseur obj)
+        public override void delete(String s)
         {
-            return false;
+            connect();
+            using (_connection)
+            {
+                using (_cmd = new OleDbCommand("DELETE FROM Fournisseurs WHERE fourn = '" + s + "'", _connection))
+                {
+
+                    // Execution de la requette et lecture du résultat en mode connecté
+                    OleDbDataReader reader = _cmd.ExecuteReader();
+
+                    //Console.WriteLine("Request created.");
+                    //Si le résultat comporte des lignes
+                    if (!reader.HasRows)
+                    {
+                        MessageBox.Show("Fournisseur supprimé avec succès!");
+                        
+                    }
+                    else MessageBox.Show("Erreur!");
+                }
+            }
         }
 
-        public override Fournisseur select(String fourn)
+        public override Fournisseur select(String s)
         {
+          
             Fournisseur fournisseur = new Fournisseur();
-            {
+            
+                connect();
                 using (_connection)
                 {
-                    using (_cmd = new OleDbCommand("SELECT * FROM Fournisseurs WHERE fourn = '" + fourn +"'" , _connection))
+                    using (_cmd = new OleDbCommand("SELECT * FROM Fournisseurs WHERE fourn = '" + s +"'" , _connection))
                     {
 
                         // Execution de la requette et lecture du résultat en mode connecté
@@ -53,8 +74,42 @@ namespace FourNature.model.dao
                         }
                     }
                 }
-            }
+            
             return fournisseur;
+        }
+
+        public override List<Fournisseur> selectAll()
+        {
+            connect();
+            List<Fournisseur> listFournisseur = new List<Fournisseur>();
+            {
+                using (_connection)
+                {
+                    using (_cmd = new OleDbCommand("SELECT fourn FROM Fournisseurs ", _connection))
+                    {
+
+                        // Execution de la requette et lecture du résultat en mode connecté
+                        OleDbDataReader reader = _cmd.ExecuteReader();
+
+                        //Console.WriteLine("Request created.");
+                        //Si le résultat comporte des lignes
+                        if (reader.HasRows)
+                        {
+                            //reader.Read() passe à la ligne suivante et renvoi false à la fin du DataReader
+                            while (reader.Read())
+                            {
+                                listFournisseur.Add(new Fournisseur(reader["fourn"].ToString()));
+                            }
+                        }
+                    }
+                }
+            }
+            return listFournisseur;
+        }
+
+        public override List<Fournisseur> selectAvecParam(string s)
+        {
+            throw new NotImplementedException();
         }
 
         public override bool update(Fournisseur obj)

@@ -1,5 +1,6 @@
 ﻿namespace FourNature.vue
 {
+
     partial class Accueil
     {
         /// <summary>
@@ -28,6 +29,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(48, 27);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(212, 180);
+            this.textBox1.TabIndex = 0;
+
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.ListeFournisseur = new System.Windows.Forms.Button();
@@ -97,8 +110,8 @@
             // 
             // Arbitrage
             // 
-            this.Arbitrage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.Arbitrage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Arbitrage.Location = new System.Drawing.Point(287, 3);
             this.Arbitrage.Name = "Arbitrage";
@@ -136,8 +149,8 @@
             // 
             // Bienvenu
             // 
-            this.Bienvenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.Bienvenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Bienvenu.AutoSize = true;
             this.Bienvenu.Location = new System.Drawing.Point(145, 0);
@@ -155,11 +168,20 @@
             this.Icon.Size = new System.Drawing.Size(28, 13);
             this.Icon.TabIndex = 1;
             this.Icon.Text = "Icon";
+
             // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.textBox1);
+            this.Name = "Accueil";
+            this.Text = "Accueil";
+            this.Load += new System.EventHandler(this.Accueil_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
             this.ClientSize = new System.Drawing.Size(429, 306);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Accueil";
@@ -176,6 +198,7 @@
 
         #endregion
 
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button Arbitrage;

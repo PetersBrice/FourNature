@@ -34,6 +34,11 @@ namespace FourNature.model.metier
 
         }
 
+        public Fournisseur(String fourn)
+        {
+            this.fourn = fourn;
+        }
+
         public Fournisseur(String adresse1, String adresse2, String adresse3, String code_post, String comment, String e_mail, String fax, String fourn,
                            String mots_clefs, String nom, String nom_cor, String pays, String regl, String telephone, String telephone1, String titre,
                            String type_fournisseur, String ville, String www, int mt_franco)

@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Text = "Commande";
+
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.articleIdLabel = new System.Windows.Forms.Label();
             this.designationLabel = new System.Windows.Forms.Label();
