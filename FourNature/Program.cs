@@ -23,8 +23,8 @@ namespace FourNature
             Application.SetCompatibleTextRenderingDefault(false);
             Model model = Model.Instance();
             model.Initialize();
-            model.getFournisseurVue();                                    
-            Application.Run(model.FournVue);                        
+            model.getClientsVue();                                    
+            Application.Run(model.ClientVue);                        
         }
     }
 }
