@@ -284,5 +284,17 @@ namespace FourNature.vue
             this.model.updateFournVue();
         }
 
+        private void SupprimerArticle_Click(object sender, EventArgs e)
+        {
+            if (listBox2.SelectedItem != null)
+            {
+                if (MessageBox.Show(this, "Etes-vous sûr de vouloir supprimer " + listBox2.SelectedItem.ToString() + " ?", " ATTENTION !!",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    this.model.supprArticle(listBox2.SelectedItem.ToString());
+                }
+            }
+            update();
+        }
     }
 }

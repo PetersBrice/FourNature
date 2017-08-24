@@ -132,6 +132,11 @@ namespace FourNature.model
             fournVue.EmailFournisseur.Text = "-";
         }
 
+        public void clearArticle()
+        {
+            fournVue.ListBox2.Items.Clear();
+        }
+
         public void clearInfoArticle()
         {
             fournVue.DesignArticle.Text = "-";
@@ -144,6 +149,8 @@ namespace FourNature.model
             fournVue.ListBoxFournisseur.Items.Clear();
             listeFourn();
             clearInfoFourn();
+            clearArticle();
+            clearInfoArticle();
         }
 
         public void getClientsVue()
