@@ -14,5 +14,6 @@ namespace FourNature.model.dao
         public static DAO<Fournisseur> getFournisseurDAO() { return new FournisseurDAO(); }
         public static DAO<Article> getArticleDAO() { return new ArticleDAO(); }
         public static DAO<Clients> getClientsDAO() { return new ClientsDAO(); }
+        public static DAO<Devis_entetes> getDevis_entetesDAO() { return new Devis_entetesDAO(); }
     }
 }
