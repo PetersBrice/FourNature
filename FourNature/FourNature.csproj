@@ -47,10 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="model\dao\ArticleDAO.cs" />
+    <Compile Include="model\dao\ClientsDAO.cs" />
     <Compile Include="model\dao\DAO.cs" />
     <Compile Include="model\dao\DAOFactory.cs" />
     <Compile Include="model\dao\FournisseurDAO.cs" />
     <Compile Include="model\dao\metier\Article.cs" />
+    <Compile Include="model\dao\metier\Clients.cs" />
     <Compile Include="model\dao\metier\Fournisseur.cs" />
     <Compile Include="model\Model.cs" />
     <Compile Include="Program.cs" />
@@ -90,6 +92,9 @@
     </Compile>
     <EmbeddedResource Include="vue\AccueilVue.resx">
       <DependentUpon>AccueilVue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vue\ClientVue.resx">
+      <DependentUpon>ClientVue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vue\FournisseurVue.resx">
       <DependentUpon>FournisseurVue.cs</DependentUpon>
