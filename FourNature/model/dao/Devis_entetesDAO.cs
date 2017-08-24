@@ -39,7 +39,7 @@ namespace FourNature.model.dao
         {
             throw new NotImplementedException();
         }
-        public Devis_entetes selectDevis(Clients c)
+        public Devis_entetes selectDevis(Client c)
         {
             Devis_entetes devis = new Devis_entetes();
 

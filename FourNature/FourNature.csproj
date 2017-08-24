@@ -49,6 +49,7 @@
     <Compile Include="model\dao\ArticleDAO.cs" />
 	<Compile Include="model\dao\ClientsDAO.cs" />
     <Compile Include="model\dao\Commandes_articlesDAO.cs" />
+    <Compile Include="model\dao\ClientsDAO.cs" />
     <Compile Include="model\dao\DAO.cs" />
     <Compile Include="model\dao\DAOFactory.cs" />
     <Compile Include="model\dao\Devis_articlesDAO.cs" />
@@ -101,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vue\CommandeVue.resx">
       <DependentUpon>CommandeVue.cs</DependentUpon>
+	</EmbeddedResource>
+    <EmbeddedResource Include="vue\ClientVue.resx">
+      <DependentUpon>ClientVue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vue\FournisseurVue.resx">
       <DependentUpon>FournisseurVue.cs</DependentUpon>
