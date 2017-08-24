@@ -14,16 +14,17 @@ namespace FourNature.model
     class Model
     {
         private DAO<Fournisseur> fournisseurDAO;
+        private DAO<Commandes_articles> commandeDAO;
         private DAO<Article> articleDAO;
         private DAO<Clients> clientsDAO;
         private FournisseurVue fournVue;
+        private CommandeVue commandeVue;
         private ClientVue clientVue;
         private static Model instance;
         private Model()
         {
 
         }
-
 
         public static Model Instance()
         {
@@ -37,22 +38,27 @@ namespace FourNature.model
 
         }
 
-
-
         public void Initialize()
         {
             this.fournisseurDAO = new FournisseurDAO();
             this.articleDAO = new ArticleDAO();
+            this.commandeDAO = new Commandes_articlesDAO();
             this.clientsDAO = new ClientsDAO();
+
         }
 
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //                                                  Partie Vue Fournisseurs
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
         public void getFournisseurVue()
         {
             this.fournVue = new FournisseurVue();
             listeFourn();
         }
-
-
 
         public void infoFourn(String fourn)
         {
@@ -95,10 +101,7 @@ namespace FourNature.model
                 fournVue.ListBoxFournisseur.Items.Add(fournisseur.Fourn);
             }
 
-
         }
-
-      
 
         public FournisseurVue FournVue
         {
@@ -224,5 +227,69 @@ namespace FourNature.model
             clearInfoCli(); 
 
         }
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //                                                  Partie Vue Commandes
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        public void getCommandeVue()
+        {
+            this.commandeVue = new CommandeVue();
+            infoCommande("D06/0600201");
+        }
+
+        public void infoCommande(String ncde)
+        {
+            //infos articles
+            ListViewItem listItem;
+            List<Commandes_articles> listCommande = commandeDAO.selectAvecParam(ncde);
+            this.commandeVue.LabelNcde.Text = "N° Commande : " + ncde;
+            this.commandeVue.LabelPrix.Text = "Prix Total : " + CalculPrixTotal(listCommande)+ " €";
+            foreach (Commandes_articles commande in listCommande)
+            {
+                //MessageBox.Show(commande.Design);
+                listItem = new ListViewItem();
+                listItem.Text = commande.Article;
+                listItem.SubItems.Add(commande.Design);
+                listItem.SubItems.Add(commande.Fourn);
+                listItem.SubItems.Add(commande.Qte_cde.ToString());                
+                listItem.SubItems.Add(commande.Prix_achat.ToString());
+                commandeVue.ListViewCommande.Items.Add(listItem);
+                //commandeVue.ListBoxArticle.Items.Add(commande.Article);
+                //commandeVue.ListBoxDesignation.Items.Add(commande.Design);
+                //commandeVue.ListBoxFournisseur.Items.Add(commande.Fourn);
+                //commandeVue.ListBoxQte.Items.Add(commande.Qte_cde.ToString());                
+            }
+            
+        }
+
+        public float CalculPrixTotal(List<Commandes_articles> l)
+        {
+            float montant = 0;
+            foreach (Commandes_articles commande in l)
+            {
+                montant += commande.Prix_achat*commande.Qte_cde;          
+            }
+
+            return montant;
+        }
+
+        public CommandeVue CommandeVue
+        {
+            get
+            {
+                return commandeVue;
+            }
+
+            set
+            {
+                commandeVue = value;
+            }
+        }
+
+
     }
 }
