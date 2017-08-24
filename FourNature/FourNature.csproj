@@ -47,10 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="model\dao\ArticleDAO.cs" />
+	<Compile Include="model\dao\ClientsDAO.cs" />
+    <Compile Include="model\dao\Commandes_articlesDAO.cs" />
     <Compile Include="model\dao\DAO.cs" />
     <Compile Include="model\dao\DAOFactory.cs" />
+    <Compile Include="model\dao\Devis_articlesDAO.cs" />
+    <Compile Include="model\dao\Devis_entetesDAO.cs" />
     <Compile Include="model\dao\FournisseurDAO.cs" />
     <Compile Include="model\dao\metier\Article.cs" />
+	<Compile Include="model\dao\metier\Clients.cs" />
+    <Compile Include="model\dao\metier\Commandes_articles.cs" />
+    <Compile Include="model\dao\metier\Devis_articles.cs" />
+    <Compile Include="model\dao\metier\Devis_entetes.cs" />
     <Compile Include="model\dao\metier\Fournisseur.cs" />
     <Compile Include="model\Model.cs" />
     <Compile Include="Program.cs" />
@@ -90,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="vue\AccueilVue.resx">
       <DependentUpon>AccueilVue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vue\CommandeVue.resx">
+      <DependentUpon>CommandeVue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vue\FournisseurVue.resx">
       <DependentUpon>FournisseurVue.cs</DependentUpon>

@@ -18,13 +18,13 @@ namespace FourNature
         /// </summary>
         [STAThread]
         static void Main()
-        {
+         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Model model = Model.Instance();
             model.Initialize();
-            model.getFournisseurVue();                                    
-            Application.Run(model.FournVue);                        
+            model.getCommandeVue();                                    
+            Application.Run(model.CommandeVue);                        
         }
     }
 }
