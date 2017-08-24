@@ -151,6 +151,7 @@ namespace FourNature.model
             clearInfoFourn();
             clearArticle();
             clearInfoArticle();
+
         }
 
         public void getClientsVue()
@@ -221,6 +222,7 @@ namespace FourNature.model
             clientVue.ListClient.Items.Clear();
             listeCli();
             clearInfoCli(); 
+
         }
     }
 }
