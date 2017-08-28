@@ -36,9 +36,15 @@
             this.buttonExporter = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.labelNcde = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ouvrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientToolStripMenuItemOuvrir = new System.Windows.Forms.ToolStripMenuItem();
+            this.fournisseurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.commandeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -54,6 +60,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
@@ -66,9 +73,9 @@
             // listViewCommande
             // 
             this.listViewCommande.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewCommande.Location = new System.Drawing.Point(5, 49);
+            this.listViewCommande.Location = new System.Drawing.Point(5, 71);
             this.listViewCommande.Name = "listViewCommande";
-            this.listViewCommande.Size = new System.Drawing.Size(900, 333);
+            this.listViewCommande.Size = new System.Drawing.Size(900, 313);
             this.listViewCommande.TabIndex = 0;
             this.listViewCommande.UseCompatibleStateImageBehavior = false;
             // 
@@ -81,12 +88,12 @@
             this.tableLayoutPanel2.Controls.Add(this.labelPrix, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonModifier, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonExporter, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(5, 390);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 389);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(900, 44);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(900, 41);
             this.tableLayoutPanel2.TabIndex = 1;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -94,7 +101,7 @@
             // 
             this.labelPrix.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelPrix.AutoSize = true;
-            this.labelPrix.Location = new System.Drawing.Point(132, 15);
+            this.labelPrix.Location = new System.Drawing.Point(132, 14);
             this.labelPrix.Name = "labelPrix";
             this.labelPrix.Size = new System.Drawing.Size(35, 13);
             this.labelPrix.TabIndex = 2;
@@ -108,10 +115,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonModifier.Location = new System.Drawing.Point(302, 3);
             this.buttonModifier.Name = "buttonModifier";
-            this.buttonModifier.Size = new System.Drawing.Size(294, 38);
+            this.buttonModifier.Size = new System.Drawing.Size(294, 35);
             this.buttonModifier.TabIndex = 1;
             this.buttonModifier.Text = "Modifier";
             this.buttonModifier.UseVisualStyleBackColor = true;
+            this.buttonModifier.Click += new System.EventHandler(this.buttonModifier_Click);
             // 
             // buttonExporter
             // 
@@ -120,7 +128,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonExporter.Location = new System.Drawing.Point(602, 3);
             this.buttonExporter.Name = "buttonExporter";
-            this.buttonExporter.Size = new System.Drawing.Size(295, 38);
+            this.buttonExporter.Size = new System.Drawing.Size(295, 35);
             this.buttonExporter.TabIndex = 2;
             this.buttonExporter.Text = "Exporter";
             this.buttonExporter.UseVisualStyleBackColor = true;
@@ -131,11 +139,12 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.labelNcde, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(5, 5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(5, 30);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(900, 36);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(900, 33);
             this.tableLayoutPanel3.TabIndex = 2;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
@@ -149,17 +158,59 @@
             this.labelNcde.Margin = new System.Windows.Forms.Padding(0);
             this.labelNcde.Name = "labelNcde";
             this.labelNcde.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.labelNcde.Size = new System.Drawing.Size(900, 36);
+            this.labelNcde.Size = new System.Drawing.Size(900, 33);
             this.labelNcde.TabIndex = 0;
             this.labelNcde.Text = "N° Commande :";
             this.labelNcde.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelNcde.Click += new System.EventHandler(this.labelNcde_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ouvrirToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(906, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ouvrirToolStripMenuItem
+            // 
+            this.ouvrirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientToolStripMenuItemOuvrir,
+            this.fournisseurToolStripMenuItem,
+            this.commandeToolStripMenuItem});
+            this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.ouvrirToolStripMenuItem.Text = "Ouvrir";
+            // 
+            // clientToolStripMenuItemOuvrir
+            // 
+            this.clientToolStripMenuItemOuvrir.Name = "clientToolStripMenuItemOuvrir";
+            this.clientToolStripMenuItemOuvrir.Size = new System.Drawing.Size(152, 22);
+            this.clientToolStripMenuItemOuvrir.Text = "Client";
+            this.clientToolStripMenuItemOuvrir.Click += new System.EventHandler(this.clientToolStripMenuItemOuvrir_Click);
+            // 
+            // fournisseurToolStripMenuItem
+            // 
+            this.fournisseurToolStripMenuItem.Name = "fournisseurToolStripMenuItem";
+            this.fournisseurToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fournisseurToolStripMenuItem.Text = "Fournisseur";
+            this.fournisseurToolStripMenuItem.Click += new System.EventHandler(this.fournisseurToolStripMenuItem_Click);
+            // 
+            // commandeToolStripMenuItem
+            // 
+            this.commandeToolStripMenuItem.Name = "commandeToolStripMenuItem";
+            this.commandeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.commandeToolStripMenuItem.Text = "Commande";
+            this.commandeToolStripMenuItem.Click += new System.EventHandler(this.commandeToolStripMenuItem_Click);
             // 
             // CommandeVue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 432);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CommandeVue";
             this.Text = "Commande";
@@ -169,6 +220,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +237,10 @@
         private System.Windows.Forms.Label labelPrix;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label labelNcde;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ouvrirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientToolStripMenuItemOuvrir;
+        private System.Windows.Forms.ToolStripMenuItem fournisseurToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem commandeToolStripMenuItem;
     }
 }

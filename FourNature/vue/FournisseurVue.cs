@@ -11,12 +11,14 @@ using System.Windows.Forms;
 
 namespace FourNature.vue
 {
-    public partial class FournisseurVue : Form
+    partial class FournisseurVue : Form
     {
-        private Model model = Model.Instance();
-        public FournisseurVue()
+        private Model model;
+        public FournisseurVue(Model model)
         {
-            InitializeComponent();            
+            this.model = model;            
+            InitializeComponent();
+           // this.model.listeFourn();
         }
 
         public Label AdresseFournisseur
@@ -197,13 +199,17 @@ namespace FourNature.vue
         {
             if (listBoxFournisseur.SelectedItem != null)
             {
-                this.model.clearInfoArticle();
+                clearInfoArticle();
                 this.model.infoFourn(listBoxFournisseur.SelectedItem.ToString());                
             }
-
-
         }
-        
+        public void clearInfoArticle()
+        {
+            designationArticle.Text = "-";
+            prixArticle.Text = "-";
+            varieteArticle.Text = "-";
+        }
+
 
         private void SupprimerFournisseur_Click(object sender, EventArgs e)
         {
@@ -295,6 +301,20 @@ namespace FourNature.vue
                 }
             }
             update();
+        }
+
+        private void clientToolStripMenuItemOuvrir_Click(object sender, EventArgs e)
+        {
+            model.ClientVue.Show();
+            model.FournVue.Hide();
+            model.updateClientVue();
+        }
+
+        private void commandeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            model.CommandeVue.Show();
+            model.FournVue.Hide();
+            model.CommandeVue.update();
         }
     }
 }

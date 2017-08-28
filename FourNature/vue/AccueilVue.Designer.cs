@@ -29,23 +29,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(48, 27);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 180);
-            this.textBox1.TabIndex = 0;
-
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.ListeFournisseur = new System.Windows.Forms.Button();
-            this.ListeClient = new System.Windows.Forms.Button();
             this.Arbitrage = new System.Windows.Forms.Button();
+            this.ListeClient = new System.Windows.Forms.Button();
+            this.ListeFournisseur = new System.Windows.Forms.Button();
             this.Version = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Bienvenu = new System.Windows.Forms.Label();
@@ -62,70 +50,75 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.Version, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(428, 306);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(734, 441);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 143F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Controls.Add(this.Arbitrage, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.ListeClient, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.ListeFournisseur, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 101);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 147);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(428, 101);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(734, 147);
             this.tableLayoutPanel2.TabIndex = 0;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
-            // ListeFournisseur
+            // Arbitrage
             // 
-            this.ListeFournisseur.Location = new System.Drawing.Point(3, 3);
-            this.ListeFournisseur.Name = "ListeFournisseur";
-            this.ListeFournisseur.Size = new System.Drawing.Size(136, 95);
-            this.ListeFournisseur.TabIndex = 0;
-            this.ListeFournisseur.Text = "Liste Fournisseur";
-            this.ListeFournisseur.UseVisualStyleBackColor = true;
+            this.Arbitrage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Arbitrage.Location = new System.Drawing.Point(491, 3);
+            this.Arbitrage.Name = "Arbitrage";
+            this.Arbitrage.Size = new System.Drawing.Size(240, 141);
+            this.Arbitrage.TabIndex = 2;
+            this.Arbitrage.Text = "Arbitrage";
+            this.Arbitrage.UseVisualStyleBackColor = true;
             // 
             // ListeClient
             // 
-            this.ListeClient.Location = new System.Drawing.Point(145, 3);
+            this.ListeClient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListeClient.Location = new System.Drawing.Point(247, 3);
             this.ListeClient.Name = "ListeClient";
-            this.ListeClient.Size = new System.Drawing.Size(136, 95);
+            this.ListeClient.Size = new System.Drawing.Size(238, 141);
             this.ListeClient.TabIndex = 1;
             this.ListeClient.Text = "Liste Client";
             this.ListeClient.UseVisualStyleBackColor = true;
             // 
-            // Arbitrage
+            // ListeFournisseur
             // 
-            this.Arbitrage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Arbitrage.Location = new System.Drawing.Point(287, 3);
-            this.Arbitrage.Name = "Arbitrage";
-            this.Arbitrage.Size = new System.Drawing.Size(138, 95);
-            this.Arbitrage.TabIndex = 2;
-            this.Arbitrage.Text = "Arbitrage";
-            this.Arbitrage.UseVisualStyleBackColor = true;
+            this.ListeFournisseur.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListeFournisseur.Location = new System.Drawing.Point(3, 3);
+            this.ListeFournisseur.Name = "ListeFournisseur";
+            this.ListeFournisseur.Size = new System.Drawing.Size(238, 141);
+            this.ListeFournisseur.TabIndex = 0;
+            this.ListeFournisseur.Text = "Liste Fournisseur";
+            this.ListeFournisseur.UseVisualStyleBackColor = true;
+            this.ListeFournisseur.Click += new System.EventHandler(this.ListeFournisseur_Click);
             // 
             // Version
             // 
             this.Version.AllowDrop = true;
             this.Version.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Version.AutoSize = true;
-            this.Version.Location = new System.Drawing.Point(383, 293);
+            this.Version.Location = new System.Drawing.Point(689, 428);
             this.Version.Name = "Version";
             this.Version.Size = new System.Drawing.Size(42, 13);
             this.Version.TabIndex = 1;
@@ -139,23 +132,24 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.Controls.Add(this.Bienvenu, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.Icon, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(428, 100);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(734, 147);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // Bienvenu
             // 
-            this.Bienvenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.Bienvenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Bienvenu.AutoSize = true;
-            this.Bienvenu.Location = new System.Drawing.Point(145, 0);
+            this.Bienvenu.Location = new System.Drawing.Point(247, 0);
             this.Bienvenu.Name = "Bienvenu";
-            this.Bienvenu.Size = new System.Drawing.Size(136, 100);
+            this.Bienvenu.Size = new System.Drawing.Size(238, 147);
             this.Bienvenu.TabIndex = 0;
             this.Bienvenu.Text = "Bienvenu !";
             this.Bienvenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,21 +162,12 @@
             this.Icon.Size = new System.Drawing.Size(28, 13);
             this.Icon.TabIndex = 1;
             this.Icon.Text = "Icon";
-
             // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.textBox1);
-            this.Name = "Accueil";
-            this.Text = "Accueil";
-            this.Load += new System.EventHandler(this.Accueil_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-            this.ClientSize = new System.Drawing.Size(429, 306);
+            this.ClientSize = new System.Drawing.Size(734, 441);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Accueil";
             this.Text = "Accueil";
@@ -197,8 +182,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button Arbitrage;

@@ -131,7 +131,23 @@ namespace FourNature.model.dao
 
         public override bool update(Commandes_articles obj)
         {
-            throw new NotImplementedException();
+            connect();
+            {
+                using (_connection)
+                {
+                    using (_cmd = new OleDbCommand("UPDATE Commandes_articles SET fourn ='" + obj.Fourn + "',prix_achat ='" + obj.Prix_achat + "' WHERE ncde ='" + obj.Ncde + "' AND article ='" + obj.Article + "'", _connection))
+                    {
+                        if (_cmd.ExecuteNonQuery() == -1)
+                        {
+                            MessageBox.Show("Erreur modification");
+                        }
+                        else MessageBox.Show("La commande a été modifiée avec succès !");
+
+                        }
+                }
+            }
+            return true;
         }
     }
 }
+                

@@ -11,13 +11,15 @@ using System.Windows.Forms;
 
 namespace FourNature.vue
 {
-    public partial class ClientVue : Form
+    partial class ClientVue : Form
     {
-        private Model model = Model.Instance();
+        private Model model;
         private ToolStripMenuItem clientToolStripMenuItemOuvrirt;
 
-        public ClientVue()
+        public ClientVue(Model model)
         {
+            this.model = model;
+            //this.model.listeCli();
             InitializeComponent();
         }
         //adresseClient villeClient codePostalClient numérosClient emailClient
@@ -174,8 +176,16 @@ namespace FourNature.vue
 
         private void fournisseurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            model.getFournisseurVue();
-            ShowDialog(model.FournVue);
+            model.FournVue.Show();
+            model.ClientVue.Hide();
+            model.updateFournVue();
+        }
+
+        private void commandeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            model.CommandeVue.Show();
+            model.ClientVue.Hide();
+            model.CommandeVue.update();
         }
     }
 }

@@ -21,10 +21,9 @@ namespace FourNature
          {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Model model = Model.Instance();
-            model.Initialize();
-            model.getCommandeVue();                                    
-            Application.Run(model.CommandeVue);                        
+            Model model = new Model();
+            Application.Run(model.ClientVue);
+                          
         }
     }
 }

@@ -14,3 +14,10 @@ C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\obj\De
 >>>>>>> 1b5c257df4d291977a925e00ecaf454a83358a52
 C:\Users\Brice\documents\visual studio 2015\Projects\Fournature\FourNature\obj\Debug\FourNature.exe
 C:\Users\Brice\documents\visual studio 2015\Projects\Fournature\FourNature\obj\Debug\FourNature.pdb
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\obj\Debug\FourNature.vue.AccueilVue.resources
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\obj\Debug\FourNature.vue.FournisseurVue.resources
+C:\Users\Axel\documents\visual studio 2015\Projects\FourNature\FourNature\obj\Debug\FourNature.vue.CommandeVue.resources
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature - Copie\FourNature\bin\Debug\FourNature.exe.config
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature - Copie\FourNature\obj\Debug\FourNature.exe
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature - Copie\FourNature\obj\Debug\FourNature.pdb
+C:\Users\Axel\Documents\Visual Studio 2015\Projects\FourNature\FourNature\obj\Debug\FourNature.vue.ClientVue.resources

@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="model\dao\ArticleDAO.cs" />
-	<Compile Include="model\dao\ClientsDAO.cs" />
     <Compile Include="model\dao\Commandes_articlesDAO.cs" />
     <Compile Include="model\dao\ClientsDAO.cs" />
     <Compile Include="model\dao\DAO.cs" />
@@ -56,11 +55,13 @@
     <Compile Include="model\dao\Devis_entetesDAO.cs" />
     <Compile Include="model\dao\FournisseurDAO.cs" />
     <Compile Include="model\dao\metier\Article.cs" />
-	<Compile Include="model\dao\metier\Clients.cs" />
+    <Compile Include="model\dao\metier\Clients.cs" />
     <Compile Include="model\dao\metier\Commandes_articles.cs" />
     <Compile Include="model\dao\metier\Devis_articles.cs" />
     <Compile Include="model\dao\metier\Devis_entetes.cs" />
     <Compile Include="model\dao\metier\Fournisseur.cs" />
+    <Compile Include="model\dao\metier\Tarifs_articles.cs" />
+    <Compile Include="model\dao\Tarifs_articlesDAO.cs" />
     <Compile Include="model\Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="vue\FournisseurVue.Designer.cs">
       <DependentUpon>FournisseurVue.cs</DependentUpon>
     </Compile>
+    <Compile Include="vue\Prompt.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -99,10 +101,11 @@
     </Compile>
     <EmbeddedResource Include="vue\AccueilVue.resx">
       <DependentUpon>AccueilVue.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="vue\CommandeVue.resx">
       <DependentUpon>CommandeVue.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="vue\ClientVue.resx">
       <DependentUpon>ClientVue.cs</DependentUpon>
     </EmbeddedResource>

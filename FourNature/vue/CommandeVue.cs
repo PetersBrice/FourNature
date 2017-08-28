@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FourNature.model;
+using FourNature.model.dao.metier;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +12,15 @@ using System.Windows.Forms;
 
 namespace FourNature.vue
 {
-    public partial class CommandeVue : Form
+    partial class CommandeVue : Form
     {
-        public CommandeVue()
+        private Model model;
+        public CommandeVue(Model model)
         {
+            this.model = model;            
             InitializeComponent();
+            List<Commandes_articles> listCommande = this.model.infoCommande("D06/0600201");
+            remplirListView(listCommande);
         }
 
         private void Commande_Load(object sender, EventArgs e)
@@ -75,11 +81,24 @@ namespace FourNature.vue
             }
         }
 
-        
 
-        
-
-        private void listBoxFournisseur_SelectedIndexChanged(object sender, EventArgs e)
+        public void remplirListView(List<Commandes_articles> listCommande)
+        {
+            this.labelNcde.Text = "N° Commande : D06/0600201" /*+ ncde*/;
+            this.labelPrix.Text = "Prix Total : " + model.CalculPrixTotal(listCommande) + " €";
+            foreach (Commandes_articles commande in listCommande)
+            {
+                //MessageBox.Show(commande.Design);
+                ListViewItem listItem = new ListViewItem();
+                listItem.Text = commande.Article;
+                listItem.SubItems.Add(commande.Design);
+                listItem.SubItems.Add(commande.Fourn);
+                listItem.SubItems.Add(commande.Qte_cde.ToString());
+                listItem.SubItems.Add(commande.Prix_achat.ToString() + " €");
+                listViewCommande.Items.Add(listItem);
+            }
+        }
+    private void listBoxFournisseur_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -107,6 +126,41 @@ namespace FourNature.vue
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void buttonModifier_Click(object sender, EventArgs e)
+        {
+            if (listViewCommande.SelectedItems.Count > 0)
+            {
+                model.prompt();
+                update();              
+            }
+        }
+
+        public void update()
+        {
+            this.listViewCommande.Items.Clear();
+            remplirListView(model.infoCommande("D06/0600201"));
+        }
+
+        private void clientToolStripMenuItemOuvrir_Click(object sender, EventArgs e)
+        {
+            
+            model.ClientVue.Show();
+            model.CommandeVue.Hide();
+            model.updateClientVue();
+        }
+
+        private void fournisseurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            model.FournVue.Show();
+            model.CommandeVue.Hide();
+            model.updateFournVue();
+        }
+
+        private void commandeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }

@@ -17,34 +17,22 @@ namespace FourNature.model
         private DAO<Commandes_articles> commandeDAO;
         private DAO<Article> articleDAO;
         private DAO<Clients> clientsDAO;
+        private DAO<Tarifs_articles> tarifs_articlesDAO;
         private FournisseurVue fournVue;
         private CommandeVue commandeVue;
         private ClientVue clientVue;
-        private static Model instance;
-        private Model()
-        {
-
-        }
-
-        public static Model Instance()
-        {
-
-            if (instance == null)
-            {
-                instance = new Model();
-            }
-
-            return instance;
-
-        }
-
-        public void Initialize()
+        public Model()
         {
             this.fournisseurDAO = new FournisseurDAO();
             this.articleDAO = new ArticleDAO();
             this.commandeDAO = new Commandes_articlesDAO();
             this.clientsDAO = new ClientsDAO();
-
+            this.tarifs_articlesDAO = new Tarifs_articlesDAO();
+            this.fournVue = new FournisseurVue(this);
+            this.clientVue = new ClientVue(this);
+            this.commandeVue = new CommandeVue(this);
+            listeCli();
+            
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -54,11 +42,6 @@ namespace FourNature.model
         //-----------------------------------------------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------------------------------------------
-        public void getFournisseurVue()
-        {
-            this.fournVue = new FournisseurVue();
-            listeFourn();
-        }
 
         public void infoFourn(String fourn)
         {
@@ -78,10 +61,7 @@ namespace FourNature.model
             {
                 fournVue.ListBox2.Items.Add(article.Nom_article);
             }
-
-
-        }    
-        
+        }       
         public void infoArticle(String art)
         {
             //infos articles
@@ -121,11 +101,14 @@ namespace FourNature.model
             fournisseurDAO.delete(fourn);            
         }
 
-        public void supprArticle(string article)
+        public void updateFournVue()
         {
-            articleDAO.delete(article);
-        }
+            fournVue.ListBoxFournisseur.Items.Clear();
+            listeFourn();
+            clearInfoFourn();
+            clearArticle();
 
+        }
         public void clearInfoFourn()
         {
             fournVue.AdresseFournisseur.Text = "-";
@@ -134,35 +117,28 @@ namespace FourNature.model
             fournVue.NumeroFournisseur.Text = "-";
             fournVue.EmailFournisseur.Text = "-";
         }
-
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //                                                  Partie Vue Fournisseurs
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        public void supprArticle(string article)
+        {
+            articleDAO.delete(article);
+        }
         public void clearArticle()
         {
             fournVue.ListBox2.Items.Clear();
-        }
-
-        public void clearInfoArticle()
-        {
-            fournVue.DesignArticle.Text = "-";
-            fournVue.PrixArticle.Text = "-";
-            fournVue.VarieteArticle.Text = "-";
-        }
-
-        public void updateFournVue()
-        {
-            fournVue.ListBoxFournisseur.Items.Clear();
-            listeFourn();
-            clearInfoFourn();
-            clearArticle();
-            clearInfoArticle();
-
-        }
-
-        public void getClientsVue()
-        {
-            this.clientVue = new ClientVue();
-            listeCli();
-        }
-
+        }        
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //                                                  Partie Vue Clients
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
         public void infoCli(String cli)
         {
             //infos clients
@@ -173,12 +149,8 @@ namespace FourNature.model
             clientVue.NumérosClient.Text = clients.Telephone;
             clientVue.EmailClient.Text = clients.E_mail;
 
-            //articles associés
-          
-
-
+            //articles associés          
         }
-
         public void listeCli()
         {
             List<Clients> listClients = clientsDAO.selectAll();
@@ -186,12 +158,7 @@ namespace FourNature.model
             {
                clientVue.ListClient.Items.Add(clients.Client);
             }
-
-
         }
-
-
-
         public ClientVue ClientVue
         {
             get
@@ -204,12 +171,10 @@ namespace FourNature.model
                 clientVue = value;
             }
         }
-
         public void supprClient(string cli)
         {
             clientsDAO.delete(cli);
         }
-
         public void clearInfoCli()
         {
             clientVue.AdresseClient.Text = "-";
@@ -217,17 +182,13 @@ namespace FourNature.model
             clientVue.CodePostalClient.Text = "-";
             clientVue.NumérosClient.Text = "-";
             clientVue.EmailClient.Text = "-";
-        }
-
-   
+        }   
         internal void updateClientVue()
         {
             clientVue.ListClient.Items.Clear();
             listeCli();
             clearInfoCli(); 
-
         }
-
         //-----------------------------------------------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -235,35 +196,11 @@ namespace FourNature.model
         //-----------------------------------------------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------------------------------------------
-        public void getCommandeVue()
-        {
-            this.commandeVue = new CommandeVue();
-            infoCommande("D06/0600201");
-        }
-
-        public void infoCommande(String ncde)
+        public List<Commandes_articles> infoCommande(String ncde)
         {
             //infos articles
-            ListViewItem listItem;
-            List<Commandes_articles> listCommande = commandeDAO.selectAvecParam(ncde);
-            this.commandeVue.LabelNcde.Text = "N° Commande : " + ncde;
-            this.commandeVue.LabelPrix.Text = "Prix Total : " + CalculPrixTotal(listCommande)+ " €";
-            foreach (Commandes_articles commande in listCommande)
-            {
-                //MessageBox.Show(commande.Design);
-                listItem = new ListViewItem();
-                listItem.Text = commande.Article;
-                listItem.SubItems.Add(commande.Design);
-                listItem.SubItems.Add(commande.Fourn);
-                listItem.SubItems.Add(commande.Qte_cde.ToString());                
-                listItem.SubItems.Add(commande.Prix_achat.ToString());
-                commandeVue.ListViewCommande.Items.Add(listItem);
-                //commandeVue.ListBoxArticle.Items.Add(commande.Article);
-                //commandeVue.ListBoxDesignation.Items.Add(commande.Design);
-                //commandeVue.ListBoxFournisseur.Items.Add(commande.Fourn);
-                //commandeVue.ListBoxQte.Items.Add(commande.Qte_cde.ToString());                
-            }
-            
+            List<Commandes_articles> listCommande = commandeDAO.selectAvecParam(ncde);            
+            return listCommande;
         }
 
         public float CalculPrixTotal(List<Commandes_articles> l)
@@ -290,6 +227,21 @@ namespace FourNature.model
             }
         }
 
+        public void maj_Commande(Commandes_articles cmd)
+        {
+            commandeDAO.update(cmd);
+        }
 
+        public List<Tarifs_articles> getFournArticle(String text)
+        {            
+            List<Tarifs_articles> listArticle = tarifs_articlesDAO.selectAvecParam(text);
+            return listArticle;            
+        }
+        public void prompt()
+        {
+            Prompt prompt = new Prompt(this);
+            //MessageBox.Show(listViewCommande.SelectedItems.Count.ToString());
+            prompt.ShowDialog(commandeVue.ListViewCommande.SelectedItems[0].Text, "Modification de l'article : " + commandeVue.ListViewCommande.SelectedItems[0].Text, commandeVue.LabelNcde.Text.Substring(14));
+        }
     }
 }

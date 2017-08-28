@@ -30,6 +30,14 @@ namespace FourNature.model.dao.metier
             this.ncde = ncde;
         }
 
+        public Commandes_articles(String ncde, String fourn, String article,  float prix)
+        {
+            this.ncde = ncde;
+            this.article = article;
+            this.fourn = fourn;
+            this.prix_achat = prix;
+        }
+
         public Commandes_articles(String ncde, String article, String design, String fourn, String famille, String lot, String notes, float prix_achat,
                            float qte_cde, float prix_unit)
         {
