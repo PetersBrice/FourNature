@@ -162,13 +162,15 @@ namespace FourNature.model
               for(int i = 1; i < listArticleDevis.Count() - 1 ;i++)
               {
                 listArticle.Add(articleDAO.select(listArticleDevis[i].Article));
-              }
-
-            foreach (Article article in listArticle)
-            {
-                clientVue.ArcticleClientListBox.Items.Add(article.Design);
+               // clientVue.ArcticleClientListBox.Items.Add(articleDAO.select(listArticleDevis[i].Article).Design);
             }
-
+          
+                foreach (Article article in listArticle)
+                {
+                    if (article.Nom_article != null)
+                    clientVue.ArcticleClientListBox.Items.Add(article.Nom_article);
+                }
+            
         }
         public void listeCli()
         {
