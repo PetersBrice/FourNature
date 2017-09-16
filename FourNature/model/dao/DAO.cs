@@ -34,6 +34,5 @@ namespace FourNature.model.dao
         public abstract List<T> selectAll();
         public abstract List<T> selectAvecParam(String s);
 
-
     }
 }

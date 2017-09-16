@@ -37,7 +37,7 @@ namespace FourNature.model.dao
             {
                 using (_connection)
                 {
-                    using (_cmd = new OleDbCommand("SELECT article FROM articles WHERE fourn ='" + s + "'", _connection))
+                    using (_cmd = new OleDbCommand("SELECT * FROM devis_articles WHERE devis ='" + s + "'", _connection))
                     {
 
                         // Execution de la requette et lecture du résultat en mode connecté
@@ -50,7 +50,7 @@ namespace FourNature.model.dao
                             //reader.Read() passe à la ligne suivante et renvoi false à la fin du DataReader
                             while (reader.Read())
                             {
-                                listDevis.Add(new Devis_articles(reader["devis"].ToString(), reader["article"].ToString()));
+                                 listDevis.Add(new Devis_articles(reader["devis"].ToString(), reader["article"].ToString()));
                             }
                         }
                     }

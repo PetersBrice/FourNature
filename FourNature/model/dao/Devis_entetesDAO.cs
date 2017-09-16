@@ -46,9 +46,8 @@ namespace FourNature.model.dao
             connect();
             using (_connection)
             {
-                using (_cmd = new OleDbCommand("SELECT * FROM Devis_entetes WHERE client = '" + c.Client + "AND adresse_1 =" + c.Adresse_1 + "AND adresse_2 =" + c.Adresse_2 + "AND adresse_3 =" + c.Adresse_3 + "'", _connection))
+                using (_cmd = new OleDbCommand("SELECT * FROM Devis_entetes WHERE client = '" + c.Client + "' AND adresse_1 ='" + c.Adresse_1 + "' OR adresse_1 ='' AND adresse_2 ='" + c.Adresse_2 + "' OR adresse_2 = '' AND adresse_3 ='" + c.Adresse_3 + "' OR adresse_3 = ''", _connection))
                 {
-
                     // Execution de la requette et lecture du résultat en mode connecté
                     OleDbDataReader reader = _cmd.ExecuteReader();
 

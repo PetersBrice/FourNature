@@ -187,5 +187,10 @@ namespace FourNature.vue
             model.ClientVue.Hide();
             model.CommandeVue.update();
         }
+
+        private void articleClientListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

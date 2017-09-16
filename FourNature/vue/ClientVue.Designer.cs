@@ -334,6 +334,7 @@
             this.articleClientListBox.Name = "articleClientListBox";
             this.articleClientListBox.Size = new System.Drawing.Size(671, 238);
             this.articleClientListBox.TabIndex = 6;
+            this.articleClientListBox.SelectedIndexChanged += new System.EventHandler(this.articleClientListBox_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -461,20 +462,20 @@
             // clientToolStripMenuItemOuvrir
             // 
             this.clientToolStripMenuItemOuvrir.Name = "clientToolStripMenuItemOuvrir";
-            this.clientToolStripMenuItemOuvrir.Size = new System.Drawing.Size(152, 22);
+            this.clientToolStripMenuItemOuvrir.Size = new System.Drawing.Size(137, 22);
             this.clientToolStripMenuItemOuvrir.Text = "Client";
             // 
             // fournisseurToolStripMenuItem
             // 
             this.fournisseurToolStripMenuItem.Name = "fournisseurToolStripMenuItem";
-            this.fournisseurToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fournisseurToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.fournisseurToolStripMenuItem.Text = "Fournisseur";
             this.fournisseurToolStripMenuItem.Click += new System.EventHandler(this.fournisseurToolStripMenuItem_Click);
             // 
             // commandeToolStripMenuItem
             // 
             this.commandeToolStripMenuItem.Name = "commandeToolStripMenuItem";
-            this.commandeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.commandeToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.commandeToolStripMenuItem.Text = "Commande";
             this.commandeToolStripMenuItem.Click += new System.EventHandler(this.commandeToolStripMenuItem_Click);
             // 

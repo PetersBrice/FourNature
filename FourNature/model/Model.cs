@@ -18,6 +18,8 @@ namespace FourNature.model
         private DAO<Article> articleDAO;
         private DAO<Clients> clientsDAO;
         private DAO<Tarifs_articles> tarifs_articlesDAO;
+        private Devis_entetesDAO devis_enteteDAO;
+        private Devis_articlesDAO devis_articleDAO;
         private FournisseurVue fournVue;
         private CommandeVue commandeVue;
         private ClientVue clientVue;
@@ -28,9 +30,12 @@ namespace FourNature.model
             this.commandeDAO = new Commandes_articlesDAO();
             this.clientsDAO = new ClientsDAO();
             this.tarifs_articlesDAO = new Tarifs_articlesDAO();
+            this.devis_enteteDAO = new Devis_entetesDAO();
+            this.devis_articleDAO = new Devis_articlesDAO();
             this.fournVue = new FournisseurVue(this);
             this.clientVue = new ClientVue(this);
             this.commandeVue = new CommandeVue(this);
+            
             listeCli();
             
         }
@@ -148,8 +153,22 @@ namespace FourNature.model
             clientVue.CodePostalClient.Text = clients.Code_postal;
             clientVue.NumérosClient.Text = clients.Telephone;
             clientVue.EmailClient.Text = clients.E_mail;
+            //articles associés   
+             clientVue.ArcticleClientListBox.Items.Clear();
+             Devis_entetes devis = devis_enteteDAO.selectDevis(clients);
+             String numDevis = devis.Devis;
+             List<Devis_articles> listArticleDevis = devis_articleDAO.selectAvecParam(numDevis);
+             List<Article> listArticle = new List<Article>();
+              for(int i = 1; i < listArticleDevis.Count() - 1 ;i++)
+              {
+                listArticle.Add(articleDAO.select(listArticleDevis[i].Article));
+              }
 
-            //articles associés          
+            foreach (Article article in listArticle)
+            {
+                clientVue.ArcticleClientListBox.Items.Add(article.Design);
+            }
+
         }
         public void listeCli()
         {
