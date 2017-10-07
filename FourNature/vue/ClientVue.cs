@@ -149,21 +149,21 @@ namespace FourNature.vue
 
         public void remplirListView(List<Article> listArticle)
         {
-            foreach (Article article in listArticle)
+            for (int i = 1; i < listArticle.Count() - 1; i++)
             {
                 //MessageBox.Show(commande.Design);
                 ListViewItem listItem = new ListViewItem();
-                listItem.Text = article.Nom_article;
-                listItem.SubItems.Add(article.Design);
-                listItem.SubItems.Add(article.Four);
-                if (article.Taille != null)
+                listItem.Text = listArticle[i].Nom_article;
+                listItem.SubItems.Add(listArticle[i].Design);
+                listItem.SubItems.Add(listArticle[i].Four);
+                if (listArticle[i].Taille != null)
                 {
-                    listItem.SubItems.Add(article.Taille.ToString());
+                    listItem.SubItems.Add(listArticle[i].Taille.ToString());
                 }else
                 {
                     listItem.SubItems.Add("0");
                 }
-                listItem.SubItems.Add(article.Prix_achat.ToString() + " €");
+                listItem.SubItems.Add(listArticle[i].Prix_achat.ToString() + " €");
                 articleClientListBox.Items.Add(listItem);
             }
         }

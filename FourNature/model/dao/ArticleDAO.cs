@@ -143,7 +143,7 @@ namespace FourNature.model.dao
             {
                 using (_connection)
                 {
-                    using (_cmd = new OleDbCommand("Select a.article,a.design from Articles a, devis_articles da, devis_entetes de where de.devis = da.devis and da.article = a.article  and de.client = '"+ s + "' AND date_devis = (select max(date_devis) from devis_entetes where client = '" + s + "')", _connection))
+                    using (_cmd = new OleDbCommand("Select a.article,a.design,a.famille,a.variete,a.prix_achat,a.taille from Articles a, devis_articles da, devis_entetes de where de.devis = da.devis and da.article = a.article  and de.client = '"+ s + "' AND date_devis = (select max(date_devis) from devis_entetes where client = '" + s + "')", _connection))
                     {
 
                         // Execution de la requette et lecture du résultat en mode connecté
@@ -156,7 +156,8 @@ namespace FourNature.model.dao
                             //reader.Read() passe à la ligne suivante et renvoi false à la fin du DataReader
                             while (reader.Read())
                             {
-                                listArticle.Add(new Article(reader["article"].ToString()));
+                                listArticle.Add(new Article(reader["article"].ToString(), reader["design"].ToString(), reader["famille"].ToString(), reader["variete"].ToString(), float.Parse(reader["prix_achat"].ToString()), reader["taille"].ToString()));
+
                             }
                         }
                     }
