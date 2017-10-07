@@ -119,7 +119,7 @@ namespace FourNature.model.dao
 
         public override bool update(Fournisseur obj)
         {
-            
+            throw new NotImplementedException();
         } 
     }
 }

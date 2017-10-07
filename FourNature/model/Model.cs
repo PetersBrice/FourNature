@@ -122,6 +122,7 @@ namespace FourNature.model
             Article article = new Article(a);
             articleDAO.update(article);
         }
+        
         public void clearArticle()
         {
             fournVue.ListViewArticle.Items.Clear();
