@@ -60,23 +60,11 @@ namespace FourNature.model
             fournVue.EmailFournisseur.Text = fournisseur.E_mail;
 
             //articles associés
-            fournVue.ListBox2.Items.Clear();
+            fournVue.ListViewArticle.Items.Clear();
             List<Article> listArticleFourn = articleDAO.selectAvecParam(fourn);
-            foreach (Article article in listArticleFourn)
-            {
-                fournVue.ListBox2.Items.Add(article.Nom_article);
-            }
+            fournVue.remplirListView(listArticleFourn);
         }       
-        public void infoArticle(String art)
-        {
-            //infos articles
-            Article article = articleDAO.select(art);
-            //MessageBox.Show(article.Observat);
-            fournVue.DesignArticle.Text = article.Design;
-            fournVue.PrixArticle.Text = article.Prix_achat.ToString();
-            fournVue.VarieteArticle.Text = article.Variete;
-            
-        }  
+      
 
         public void listeFourn()
         {
@@ -136,7 +124,7 @@ namespace FourNature.model
         }
         public void clearArticle()
         {
-            fournVue.ListBox2.Items.Clear();
+            fournVue.ListViewArticle.Items.Clear();
         }        
         //-----------------------------------------------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -154,6 +142,7 @@ namespace FourNature.model
             clientVue.CodePostalClient.Text = clients.Code_postal;
             clientVue.NumérosClient.Text = clients.Telephone;
             clientVue.EmailClient.Text = clients.E_mail;
+
             //articles associés               
             //Devis_entetes devis = devis_enteteDAO.selectDevis(clients);
             //String numDevis = devis.Devis;
@@ -168,6 +157,7 @@ namespace FourNature.model
             //{
             //    clientVue.ArcticleClientListBox.Items.Add(article.Nom_article);
             //}
+
         }
         public void listeCli()
         {

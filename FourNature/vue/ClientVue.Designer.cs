@@ -48,7 +48,7 @@
             this.ajouterArticleClientButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.articleClient = new System.Windows.Forms.Label();
-            this.articleClientListBox = new System.Windows.Forms.ListBox();
+            this.articleClientListBox = new System.Windows.Forms.ListView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.suprimerClientButton = new System.Windows.Forms.Button();
@@ -305,7 +305,7 @@
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.articleClient, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.articleClientListBox, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.articleClientListBox, 2, 1);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 78);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
@@ -329,12 +329,12 @@
             // 
             // articleClientListBox
             // 
-            this.articleClientListBox.FormattingEnabled = true;
+            this.articleClientListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.articleClientListBox.Location = new System.Drawing.Point(3, 44);
             this.articleClientListBox.Name = "articleClientListBox";
-            this.articleClientListBox.Size = new System.Drawing.Size(671, 238);
+            this.articleClientListBox.Size = new System.Drawing.Size(671, 257);
             this.articleClientListBox.TabIndex = 6;
-            this.articleClientListBox.SelectedIndexChanged += new System.EventHandler(this.articleClientListBox_SelectedIndexChanged);
+            this.articleClientListBox.UseCompatibleStateImageBehavior = false;
             // 
             // tableLayoutPanel2
             // 
@@ -525,7 +525,6 @@
         private System.Windows.Forms.Button ajouterArticleClientButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label articleClient;
-        private System.Windows.Forms.ListBox articleClientListBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button suprimerClientButton;
@@ -540,5 +539,6 @@
         private System.Windows.Forms.ToolStripMenuItem clientToolStripMenuItemOuvrir;
         private System.Windows.Forms.ToolStripMenuItem fournisseurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commandeToolStripMenuItem;
+        private System.Windows.Forms.ListView articleClientListBox;
     }
 }

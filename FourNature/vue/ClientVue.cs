@@ -1,4 +1,5 @@
 ﻿using FourNature.model;
+using FourNature.model.dao.metier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,10 +20,10 @@ namespace FourNature.vue
         public ClientVue(Model model)
         {
             this.model = model;
-            //this.model.listeCli();
             InitializeComponent();
+            Article_Load();
         }
-        //adresseClient villeClient codePostalClient numérosClient emailClient
+
 
         public Label AdresseClient
         {
@@ -115,7 +116,7 @@ namespace FourNature.vue
             }
         }
 
-        public ListBox ArcticleClientListBox
+        public ListView ArcticleClientListBox
         {
             get
             {
@@ -125,6 +126,45 @@ namespace FourNature.vue
             set
             {
                 articleClientListBox = value;
+            }
+        }
+
+        private void Article_Load()
+        {
+            articleClientListBox.View = View.Details;
+            articleClientListBox.Columns.Add("Article");
+            articleClientListBox.Columns.Add("Designation");
+            articleClientListBox.Columns.Add("Fournisseur");
+            articleClientListBox.Columns.Add("Quantité");
+            articleClientListBox.Columns.Add("Prix");
+            //articleClientListBox.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            for (int i = 0; i < 5; i++)
+            {
+                articleClientListBox.Columns[i].Width = 100;
+            }
+            //articleClientListBox.Columns[3].Width = 52;
+            articleClientListBox.Columns[3].TextAlign = HorizontalAlignment.Center;
+            articleClientListBox.Columns[4].TextAlign = HorizontalAlignment.Center;
+        }
+
+        public void remplirListView(List<Article> listArticle)
+        {
+            foreach (Article article in listArticle)
+            {
+                //MessageBox.Show(commande.Design);
+                ListViewItem listItem = new ListViewItem();
+                listItem.Text = article.Nom_article;
+                listItem.SubItems.Add(article.Design);
+                listItem.SubItems.Add(article.Four);
+                if (article.Taille != null)
+                {
+                    listItem.SubItems.Add(article.Taille.ToString());
+                }else
+                {
+                    listItem.SubItems.Add("0");
+                }
+                listItem.SubItems.Add(article.Prix_achat.ToString() + " €");
+                articleClientListBox.Items.Add(listItem);
             }
         }
 

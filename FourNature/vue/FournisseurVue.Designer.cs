@@ -49,36 +49,27 @@
             this.numeroFournisseur = new System.Windows.Forms.Label();
             this.emailFournisseur = new System.Windows.Forms.Label();
             this.codePostalFournisseur = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.InformationLabel = new System.Windows.Forms.Label();
-            this.ArticleLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.designationArticle = new System.Windows.Forms.Label();
-            this.arieteLabel = new System.Windows.Forms.Label();
-            this.DesignationLabel = new System.Windows.Forms.Label();
-            this.PrixLabel = new System.Windows.Forms.Label();
-            this.varieteArticle = new System.Windows.Forms.Label();
-            this.prixArticle = new System.Windows.Forms.Label();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.ModifierArticle = new System.Windows.Forms.Button();
-            this.ajouterArticle = new System.Windows.Forms.Button();
-            this.SupprimerArticle = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ouvrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientToolStripMenuItemOuvrir = new System.Windows.Forms.ToolStripMenuItem();
             this.fournisseurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commandeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ArticleLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.listViewArticle = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -384,219 +375,6 @@
             this.codePostalFournisseur.Text = "-";
             this.codePostalFournisseur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 283F));
-            this.tableLayoutPanel6.Controls.Add(this.InformationLabel, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.ArticleLabel, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel8, 1, 2);
-            this.tableLayoutPanel6.Controls.Add(this.listBox2, 0, 1);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 85);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 3;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.06276F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.93724F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(685, 256);
-            this.tableLayoutPanel6.TabIndex = 1;
-            // 
-            // InformationLabel
-            // 
-            this.InformationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.InformationLabel.AutoSize = true;
-            this.InformationLabel.Location = new System.Drawing.Point(402, 3);
-            this.InformationLabel.Name = "InformationLabel";
-            this.InformationLabel.Size = new System.Drawing.Size(277, 30);
-            this.InformationLabel.TabIndex = 5;
-            this.InformationLabel.Text = "Informations";
-            this.InformationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.InformationLabel.Click += new System.EventHandler(this.label7_Click_1);
-            // 
-            // ArticleLabel
-            // 
-            this.ArticleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArticleLabel.AutoSize = true;
-            this.ArticleLabel.Location = new System.Drawing.Point(6, 3);
-            this.ArticleLabel.Name = "ArticleLabel";
-            this.ArticleLabel.Size = new System.Drawing.Size(387, 30);
-            this.ArticleLabel.TabIndex = 3;
-            this.ArticleLabel.Text = "Article";
-            this.ArticleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.designationArticle, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.arieteLabel, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.DesignationLabel, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.PrixLabel, 0, 2);
-            this.tableLayoutPanel7.Controls.Add(this.varieteArticle, 1, 1);
-            this.tableLayoutPanel7.Controls.Add(this.prixArticle, 1, 2);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(399, 36);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 3;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(274, 174);
-            this.tableLayoutPanel7.TabIndex = 4;
-            // 
-            // designationArticle
-            // 
-            this.designationArticle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.designationArticle.AutoSize = true;
-            this.designationArticle.Location = new System.Drawing.Point(141, 6);
-            this.designationArticle.Margin = new System.Windows.Forms.Padding(3);
-            this.designationArticle.Name = "designationArticle";
-            this.designationArticle.Size = new System.Drawing.Size(127, 48);
-            this.designationArticle.TabIndex = 8;
-            this.designationArticle.Text = "-";
-            this.designationArticle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // arieteLabel
-            // 
-            this.arieteLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.arieteLabel.AutoSize = true;
-            this.arieteLabel.Location = new System.Drawing.Point(6, 63);
-            this.arieteLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.arieteLabel.Name = "arieteLabel";
-            this.arieteLabel.Size = new System.Drawing.Size(126, 48);
-            this.arieteLabel.TabIndex = 2;
-            this.arieteLabel.Text = "Variété";
-            this.arieteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // DesignationLabel
-            // 
-            this.DesignationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DesignationLabel.AutoSize = true;
-            this.DesignationLabel.Location = new System.Drawing.Point(6, 6);
-            this.DesignationLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.DesignationLabel.Name = "DesignationLabel";
-            this.DesignationLabel.Size = new System.Drawing.Size(126, 48);
-            this.DesignationLabel.TabIndex = 4;
-            this.DesignationLabel.Text = "Désignation";
-            this.DesignationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // PrixLabel
-            // 
-            this.PrixLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PrixLabel.AutoSize = true;
-            this.PrixLabel.Location = new System.Drawing.Point(6, 120);
-            this.PrixLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.PrixLabel.Name = "PrixLabel";
-            this.PrixLabel.Size = new System.Drawing.Size(126, 48);
-            this.PrixLabel.TabIndex = 3;
-            this.PrixLabel.Text = "Prix";
-            this.PrixLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // varieteArticle
-            // 
-            this.varieteArticle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.varieteArticle.AutoSize = true;
-            this.varieteArticle.Location = new System.Drawing.Point(141, 63);
-            this.varieteArticle.Margin = new System.Windows.Forms.Padding(3);
-            this.varieteArticle.Name = "varieteArticle";
-            this.varieteArticle.Size = new System.Drawing.Size(127, 48);
-            this.varieteArticle.TabIndex = 9;
-            this.varieteArticle.Text = "-";
-            this.varieteArticle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // prixArticle
-            // 
-            this.prixArticle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prixArticle.AutoSize = true;
-            this.prixArticle.Location = new System.Drawing.Point(141, 120);
-            this.prixArticle.Margin = new System.Windows.Forms.Padding(3);
-            this.prixArticle.Name = "prixArticle";
-            this.prixArticle.Size = new System.Drawing.Size(127, 48);
-            this.prixArticle.TabIndex = 7;
-            this.prixArticle.Text = "-";
-            this.prixArticle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.ColumnCount = 3;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel8.Controls.Add(this.ModifierArticle, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.ajouterArticle, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.SupprimerArticle, 2, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(399, 213);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(274, 40);
-            this.tableLayoutPanel8.TabIndex = 7;
-            // 
-            // ModifierArticle
-            // 
-            this.ModifierArticle.Location = new System.Drawing.Point(91, 0);
-            this.ModifierArticle.Margin = new System.Windows.Forms.Padding(0);
-            this.ModifierArticle.Name = "ModifierArticle";
-            this.ModifierArticle.Size = new System.Drawing.Size(91, 40);
-            this.ModifierArticle.TabIndex = 2;
-            this.ModifierArticle.Text = "Modifier";
-            this.ModifierArticle.UseVisualStyleBackColor = true;
-            // 
-            // ajouterArticle
-            // 
-            this.ajouterArticle.Location = new System.Drawing.Point(0, 0);
-            this.ajouterArticle.Margin = new System.Windows.Forms.Padding(0);
-            this.ajouterArticle.Name = "ajouterArticle";
-            this.ajouterArticle.Size = new System.Drawing.Size(91, 40);
-            this.ajouterArticle.TabIndex = 1;
-            this.ajouterArticle.Text = "Ajouter";
-            this.ajouterArticle.UseVisualStyleBackColor = true;
-            // 
-            // SupprimerArticle
-            // 
-            this.SupprimerArticle.Location = new System.Drawing.Point(182, 0);
-            this.SupprimerArticle.Margin = new System.Windows.Forms.Padding(0);
-            this.SupprimerArticle.Name = "SupprimerArticle";
-            this.SupprimerArticle.Size = new System.Drawing.Size(92, 40);
-            this.SupprimerArticle.TabIndex = 0;
-            this.SupprimerArticle.Text = "Supprimer";
-            this.SupprimerArticle.UseVisualStyleBackColor = true;
-            this.SupprimerArticle.Click += new System.EventHandler(this.SupprimerArticle_Click);
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(3, 36);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(393, 173);
-            this.listBox2.TabIndex = 6;
-            this.listBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox2_MouseClick);
-            this.listBox2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listBox2_KeyUp);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -620,22 +398,110 @@
             // clientToolStripMenuItemOuvrir
             // 
             this.clientToolStripMenuItemOuvrir.Name = "clientToolStripMenuItemOuvrir";
-            this.clientToolStripMenuItemOuvrir.Size = new System.Drawing.Size(152, 22);
+            this.clientToolStripMenuItemOuvrir.Size = new System.Drawing.Size(137, 22);
             this.clientToolStripMenuItemOuvrir.Text = "Client";
             this.clientToolStripMenuItemOuvrir.Click += new System.EventHandler(this.clientToolStripMenuItemOuvrir_Click);
             // 
             // fournisseurToolStripMenuItem
             // 
             this.fournisseurToolStripMenuItem.Name = "fournisseurToolStripMenuItem";
-            this.fournisseurToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fournisseurToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.fournisseurToolStripMenuItem.Text = "Fournisseur";
             // 
             // commandeToolStripMenuItem
             // 
             this.commandeToolStripMenuItem.Name = "commandeToolStripMenuItem";
-            this.commandeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.commandeToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.commandeToolStripMenuItem.Text = "Commande";
             this.commandeToolStripMenuItem.Click += new System.EventHandler(this.commandeToolStripMenuItem_Click);
+            // 
+            // ArticleLabel
+            // 
+            this.ArticleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ArticleLabel.AutoSize = true;
+            this.ArticleLabel.Location = new System.Drawing.Point(6, 3);
+            this.ArticleLabel.Name = "ArticleLabel";
+            this.ArticleLabel.Size = new System.Drawing.Size(673, 30);
+            this.ArticleLabel.TabIndex = 3;
+            this.ArticleLabel.Text = "Article";
+            this.ArticleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel13, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.ArticleLabel, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.listViewArticle, 0, 1);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 85);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 3;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.06276F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.93724F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(685, 256);
+            this.tableLayoutPanel6.TabIndex = 1;
+            this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 3;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel13.Controls.Add(this.button16, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.button17, 1, 0);
+            this.tableLayoutPanel13.Controls.Add(this.button18, 2, 0);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 213);
+            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(274, 40);
+            this.tableLayoutPanel13.TabIndex = 10;
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(0, 0);
+            this.button16.Margin = new System.Windows.Forms.Padding(0);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(91, 40);
+            this.button16.TabIndex = 2;
+            this.button16.Text = "Modifier";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(91, 0);
+            this.button17.Margin = new System.Windows.Forms.Padding(0);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(91, 40);
+            this.button17.TabIndex = 1;
+            this.button17.Text = "Ajouter";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(182, 0);
+            this.button18.Margin = new System.Windows.Forms.Padding(0);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(92, 40);
+            this.button18.TabIndex = 0;
+            this.button18.Text = "Supprimer";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // listViewArticle
+            // 
+            this.listViewArticle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewArticle.Location = new System.Drawing.Point(6, 39);
+            this.listViewArticle.Name = "listViewArticle";
+            this.listViewArticle.Size = new System.Drawing.Size(673, 168);
+            this.listViewArticle.TabIndex = 11;
+            this.listViewArticle.UseCompatibleStateImageBehavior = false;
             // 
             // FournisseurVue
             // 
@@ -655,13 +521,11 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            this.tableLayoutPanel13.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -684,31 +548,23 @@
         private System.Windows.Forms.Label NumeroLabel;
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Label CodePostalLabel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button ModifierFournisseur;
-        private System.Windows.Forms.Label ArticleLabel;
-        private System.Windows.Forms.Label InformationLabel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.Label DesignationLabel;
-        private System.Windows.Forms.Label arieteLabel;
-        private System.Windows.Forms.Label PrixLabel;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label adresseFournisseur;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Button ModifierArticle;
-        private System.Windows.Forms.Button ajouterArticle;
-        private System.Windows.Forms.Button SupprimerArticle;
         private System.Windows.Forms.Label villeFournisseur;
         private System.Windows.Forms.Label numeroFournisseur;
         private System.Windows.Forms.Label emailFournisseur;
         private System.Windows.Forms.Label codePostalFournisseur;
-        private System.Windows.Forms.Label prixArticle;
-        private System.Windows.Forms.Label designationArticle;
-        private System.Windows.Forms.Label varieteArticle;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ouvrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientToolStripMenuItemOuvrir;
         private System.Windows.Forms.ToolStripMenuItem fournisseurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commandeToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Label ArticleLabel;
+        private System.Windows.Forms.ListView listViewArticle;
     }
 }
