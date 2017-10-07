@@ -153,21 +153,20 @@ namespace FourNature.model
             clientVue.CodePostalClient.Text = clients.Code_postal;
             clientVue.NumérosClient.Text = clients.Telephone;
             clientVue.EmailClient.Text = clients.E_mail;
-            //articles associés   
-             clientVue.ArcticleClientListBox.Items.Clear();
-             Devis_entetes devis = devis_enteteDAO.selectDevis(clients);
-             String numDevis = devis.Devis;
-             List<Devis_articles> listArticleDevis = devis_articleDAO.selectAvecParam(numDevis);
-             List<Article> listArticle = new List<Article>();
-              for(int i = 1; i < listArticleDevis.Count() - 1 ;i++)
-              {
-                listArticle.Add(articleDAO.select(listArticleDevis[i].Article));
-              }
-
-            foreach (Article article in listArticle)
+            //articles associés               
+            //Devis_entetes devis = devis_enteteDAO.selectDevis(clients);
+            //String numDevis = devis.Devis;
+            //List<Devis_articles> listArticleDevis = devis_articleDAO.selectAvecParam(numDevis);
+            clientVue.ArcticleClientListBox.Items.Clear();
+            List<Article> listArticle = articleDAO.selectAvecParam2(cli);
+            for(int i = 1; i < listArticle.Count() - 1 ;i++)
             {
-                clientVue.ArcticleClientListBox.Items.Add(article.Design);
-            }
+                clientVue.ArcticleClientListBox.Items.Add(listArticle[i].Nom_article);
+            }            
+            //foreach (Article article in listArticle)
+            //{
+            //    clientVue.ArcticleClientListBox.Items.Add(article.Nom_article);
+            //}
 
         }
         public void listeCli()
@@ -215,10 +214,10 @@ namespace FourNature.model
         //-----------------------------------------------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------------------------------------------
-        public List<Commandes_articles> infoCommande(String ncde)
+        public List<Commandes_articles> infoCommande()
         {
             //infos articles
-            List<Commandes_articles> listCommande = commandeDAO.selectAvecParam(ncde);            
+            List<Commandes_articles> listCommande = commandeDAO.selectAll();            
             return listCommande;
         }
 
@@ -227,10 +226,10 @@ namespace FourNature.model
             float montant = 0;
             foreach (Commandes_articles commande in l)
             {
-                montant += commande.Prix_achat*commande.Qte_cde;          
+                montant = montant + (commande.Prix_achat*commande.Qte_cde);          
             }
 
-            return montant;
+            return (float)Math.Round((decimal)montant, 3, MidpointRounding.AwayFromZero);
         }
 
         public CommandeVue CommandeVue

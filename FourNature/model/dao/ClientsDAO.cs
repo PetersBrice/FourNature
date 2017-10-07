@@ -47,7 +47,7 @@ namespace FourNature.model.dao
             connect();
             using (_connection)
             {
-                using (_cmd = new OleDbCommand("SELECT * FROM clients WHERE client = '" + s + "'", _connection))
+                using (_cmd = new OleDbCommand("SELECT  client, adresse_1, adresse_2, adresse_3, ville , code_post, e_mail, telephone, telephone1, telephone2 FROM clients WHERE client = '"+ s +"' and date_modif = (select max(date_modif) from clients where client = '"+ s +"')", _connection))
                 {
 
                     // Execution de la requette et lecture du résultat en mode connecté
@@ -85,7 +85,7 @@ namespace FourNature.model.dao
             {
                 using (_connection)
                 {
-                    using (_cmd = new OleDbCommand("SELECT client FROM clients ", _connection))
+                    using (_cmd = new OleDbCommand("SELECT max(date_modif), client FROM clients group by client", _connection))
                     {
 
                         // Execution de la requette et lecture du résultat en mode connecté
@@ -108,6 +108,11 @@ namespace FourNature.model.dao
         }
 
         public override List<Clients> selectAvecParam(string s)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override List<Clients> selectAvecParam2(string s)
         {
             throw new NotImplementedException();
         }

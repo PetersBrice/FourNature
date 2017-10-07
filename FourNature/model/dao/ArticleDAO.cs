@@ -136,6 +136,35 @@ namespace FourNature.model.dao
             return listArticle;
         }
 
+        public override List<Article> selectAvecParam2(string s)
+        {
+            connect();
+            List<Article> listArticle = new List<Article>();
+            {
+                using (_connection)
+                {
+                    using (_cmd = new OleDbCommand("Select a.article,a.design from Articles a, devis_articles da, devis_entetes de where de.devis = da.devis and da.article = a.article  and de.client = '"+ s + "' AND date_devis = (select max(date_devis) from devis_entetes where client = '" + s + "')", _connection))
+                    {
+
+                        // Execution de la requette et lecture du résultat en mode connecté
+                        OleDbDataReader reader = _cmd.ExecuteReader();
+
+                        //Console.WriteLine("Request created.");
+                        //Si le résultat comporte des lignes
+                        if (reader.HasRows)
+                        {
+                            //reader.Read() passe à la ligne suivante et renvoi false à la fin du DataReader
+                            while (reader.Read())
+                            {
+                                listArticle.Add(new Article(reader["article"].ToString()));
+                            }
+                        }
+                    }
+                }
+            }
+            return listArticle;            
+        }
+
         public override bool update(Article obj)
         {
             throw new NotImplementedException();

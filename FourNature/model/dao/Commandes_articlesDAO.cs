@@ -77,7 +77,7 @@ namespace FourNature.model.dao
             {
                 using (_connection)
                 {
-                    using (_cmd = new OleDbCommand("SELECT ncde FROM Commandes_articles ", _connection))
+                    using (_cmd = new OleDbCommand("Select ca.ncde,article,design,fourn,famille,lot,notes,prix_achat,qte_cde,prix_unit FROM commandes_articles ca, commandes_entetes ce where ca.ncde = ce.ncde AND date_accept = (select max(date_accept) from commandes_entetes) ORDER BY prix_achat desc", _connection))
                     {
 
                         // Execution de la requette et lecture du résultat en mode connecté
@@ -90,7 +90,8 @@ namespace FourNature.model.dao
                             //reader.Read() passe à la ligne suivante et renvoi false à la fin du DataReader
                             while (reader.Read())
                             {
-                                listCommandes.Add(new Commandes_articles(reader["ncde"].ToString()));
+                                listCommandes.Add(new Commandes_articles(reader["ncde"].ToString(), reader["article"].ToString(), reader["design"].ToString(), reader["fourn"].ToString(), reader["famille"].ToString(),
+                                                          reader["lot"].ToString(), reader["notes"].ToString(), float.Parse(reader["prix_achat"].ToString()), float.Parse(reader["qte_cde"].ToString()), float.Parse(reader["prix_unit"].ToString())));
                             }
                         }
                     }
@@ -127,6 +128,11 @@ namespace FourNature.model.dao
                 }
             }
             return listCommandes;
+        }
+
+        public override List<Commandes_articles> selectAvecParam2(string s)
+        {
+            throw new NotImplementedException();
         }
 
         public override bool update(Commandes_articles obj)

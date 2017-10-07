@@ -66,5 +66,10 @@ namespace FourNature.model.dao
             }
             return devis;
         }
+
+        public override List<Devis_entetes> selectAvecParam2(string s)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
