@@ -60,23 +60,11 @@ namespace FourNature.model
             fournVue.EmailFournisseur.Text = fournisseur.E_mail;
 
             //articles associés
-            fournVue.ListBox2.Items.Clear();
+            fournVue.ListViewArticle.Items.Clear();
             List<Article> listArticleFourn = articleDAO.selectAvecParam(fourn);
-            foreach (Article article in listArticleFourn)
-            {
-                fournVue.ListBox2.Items.Add(article.Nom_article);
-            }
+            fournVue.remplirListView(listArticleFourn);
         }       
-        public void infoArticle(String art)
-        {
-            //infos articles
-            Article article = articleDAO.select(art);
-            //MessageBox.Show(article.Observat);
-            fournVue.DesignArticle.Text = article.Design;
-            fournVue.PrixArticle.Text = article.Prix_achat.ToString();
-            fournVue.VarieteArticle.Text = article.Variete;
-            
-        }  
+      
 
         public void listeFourn()
         {
@@ -135,7 +123,7 @@ namespace FourNature.model
         }
         public void clearArticle()
         {
-            fournVue.ListBox2.Items.Clear();
+            fournVue.ListViewArticle.Items.Clear();
         }        
         //-----------------------------------------------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -164,12 +152,9 @@ namespace FourNature.model
                 listArticle.Add(articleDAO.select(listArticleDevis[i].Article));
                // clientVue.ArcticleClientListBox.Items.Add(articleDAO.select(listArticleDevis[i].Article).Design);
             }
-          
-                foreach (Article article in listArticle)
-                {
-                    if (article.Nom_article != null)
-                    clientVue.ArcticleClientListBox.Items.Add(article.Nom_article);
-                }
+            
+            clientVue.remplirListView(listArticle);
+         
             
         }
         public void listeCli()

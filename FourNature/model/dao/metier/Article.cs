@@ -31,6 +31,15 @@ namespace FourNature.model.dao.metier
         {
             this.nom_article = nom_article;
         }
+        public Article(String nom_article, String design, String famille, String variete,float prix_achat,String taille)
+        {
+            this.nom_article = nom_article;
+            this.design = design;
+            this.famille = famille;
+            this.variete = variete;
+            this.prix_achat = prix_achat;
+            this.taille = taille;
+        }
 
         public Article(String nom_article, String fourn, String design, String famille, String variete, String observat, String notes, float prix_achat,
                               float prix_ttc, float prix_unit, String taille, String photo)

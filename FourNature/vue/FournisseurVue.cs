@@ -1,4 +1,5 @@
 ﻿using FourNature.model;
+using FourNature.model.dao.metier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace FourNature.vue
         {
             this.model = model;            
             InitializeComponent();
-           // this.model.listeFourn();
+            Article_Load();
         }
 
         public Label AdresseFournisseur
@@ -95,55 +96,22 @@ namespace FourNature.vue
             }
         }
 
-        public ListBox ListBox2
+        public ListView ListViewArticle
         {
             get
             {
-                return listBox2;
+                return listViewArticle;
             }
 
             set
             {
-                listBox2 = value;
+                listViewArticle = value;
             }
         }
 
-        public Label VarieteArticle
-        {
-            get
-            {
-                return varieteArticle;
-            }
-
-            set
-            {
-                varieteArticle = value;
-            }
-        }
-        public Label PrixArticle
-        {
-            get
-            {
-                return prixArticle;
-            }
-
-            set
-            {
-                prixArticle = value;
-            }
-        }
-        public Label DesignArticle
-        {
-            get
-            {
-                return designationArticle;
-            }
-
-            set
-            {
-                designationArticle = value;
-            }
-        }
+       
+     
+    
 
         private void Fourniture_Load(object sender, EventArgs e)
         { }
@@ -199,16 +167,10 @@ namespace FourNature.vue
         {
             if (listBoxFournisseur.SelectedItem != null)
             {
-                clearInfoArticle();
                 this.model.infoFourn(listBoxFournisseur.SelectedItem.ToString());                
             }
         }
-        public void clearInfoArticle()
-        {
-            designationArticle.Text = "-";
-            prixArticle.Text = "-";
-            varieteArticle.Text = "-";
-        }
+      
 
 
         private void SupprimerFournisseur_Click(object sender, EventArgs e)
@@ -253,38 +215,9 @@ namespace FourNature.vue
         //--------------------------------------------------------
         //listbox2
         //--------------------------------------------------------
-        private void listBox2_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (listBox2.SelectedItem != null)
-            {
-                this.model.infoArticle(listBox2.SelectedItem.ToString());
-            }
-        }
+       
 
-        private void listBox2_KeyUp(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Up:
-                    {
-                        // act on up arrow
-                        if (listBox2.SelectedItem != null)
-                        {
-                            this.model.infoArticle(listBox2.SelectedItem.ToString());
-                        }
-                        break;
-                    }
-                case Keys.Down:
-                    {
-                        // act on down arrow
-                        if (listBox2.SelectedItem != null)
-                        {
-                            this.model.infoArticle(listBox2.SelectedItem.ToString());
-                        }
-                        break;
-                    }
-            }
-        }
+
         public void update()
         {
             this.model.updateFournVue();
@@ -292,12 +225,12 @@ namespace FourNature.vue
 
         private void SupprimerArticle_Click(object sender, EventArgs e)
         {
-            if (listBox2.SelectedItem != null)
+            if (listViewArticle.SelectedItems[0] != null)
             {
-                if (MessageBox.Show(this, "Etes-vous sûr de vouloir supprimer " + listBox2.SelectedItem.ToString() + " ?", " ATTENTION !!",
+                if (MessageBox.Show(this, "Etes-vous sûr de vouloir supprimer " + listViewArticle.SelectedItems[0].ToString() + " ?", " ATTENTION !!",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
-                    this.model.supprArticle(listBox2.SelectedItem.ToString());
+                    this.model.supprArticle(listViewArticle.SelectedItems[0].ToString());
                 }
             }
             update();
@@ -316,5 +249,37 @@ namespace FourNature.vue
             model.FournVue.Hide();
             model.CommandeVue.update();
         }
+
+        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Article_Load()
+        {
+            listViewArticle.View = View.Details;
+            listViewArticle.Columns.Add("Article");
+            listViewArticle.Columns.Add("Designation");
+            listViewArticle.Columns.Add("Prix");
+            listViewArticle.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listViewArticle.Columns[0].Width = 100;
+            listViewArticle.Columns[1].Width = 100;
+            listViewArticle.Columns[2].Width = 100;
+
+        }
+
+        public void remplirListView(List<Article> listCommande)
+        {
+           
+            foreach (Article article in listCommande)
+            {
+                ListViewItem listItem = new ListViewItem();
+                listItem.Text = article.Nom_article;
+                listItem.SubItems.Add(article.Design);
+                listItem.SubItems.Add(article.Prix_achat.ToString() + " €");
+                listViewArticle.Items.Add(listItem);
+            }
+        }
+
     }
 }

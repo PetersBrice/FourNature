@@ -162,5 +162,10 @@ namespace FourNature.vue
         {
           
         }
+
+        private void listViewCommande_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
