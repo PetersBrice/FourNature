@@ -59,6 +59,11 @@ namespace FourNature.model.dao
             return listDevis;
         }
 
+        public override List<Devis_articles> selectAvecParam2(string s)
+        {
+            throw new NotImplementedException();
+        }
+
         public override bool update(Devis_articles obj)
         {
             throw new NotImplementedException();

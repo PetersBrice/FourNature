@@ -19,7 +19,7 @@ namespace FourNature.vue
         {
             this.model = model;            
             InitializeComponent();
-            List<Commandes_articles> listCommande = this.model.infoCommande("D06/0600201");
+            List<Commandes_articles> listCommande = this.model.infoCommande();
             remplirListView(listCommande);
         }
 
@@ -84,7 +84,7 @@ namespace FourNature.vue
 
         public void remplirListView(List<Commandes_articles> listCommande)
         {
-            this.labelNcde.Text = "N° Commande : D06/0600201" /*+ ncde*/;
+            this.labelNcde.Text = "N° Commande : " + listCommande[1].Ncde;
             this.labelPrix.Text = "Prix Total : " + model.CalculPrixTotal(listCommande) + " €";
             foreach (Commandes_articles commande in listCommande)
             {
@@ -140,7 +140,7 @@ namespace FourNature.vue
         public void update()
         {
             this.listViewCommande.Items.Clear();
-            remplirListView(model.infoCommande("D06/0600201"));
+            remplirListView(model.infoCommande());
         }
 
         private void clientToolStripMenuItemOuvrir_Click(object sender, EventArgs e)

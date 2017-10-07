@@ -112,6 +112,11 @@ namespace FourNature.model.dao
             throw new NotImplementedException();
         }
 
+        public override List<Fournisseur> selectAvecParam2(string s)
+        {
+            throw new NotImplementedException();
+        }
+
         public override bool update(Fournisseur obj)
         {
             return false;

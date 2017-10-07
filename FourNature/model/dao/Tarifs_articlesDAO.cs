@@ -59,6 +59,11 @@ namespace FourNature.model.dao
             return listArticle;
         }
 
+        public override List<Tarifs_articles> selectAvecParam2(string s)
+        {
+            throw new NotImplementedException();
+        }
+
         public override bool update(Tarifs_articles obj)
         {
             throw new NotImplementedException();
