@@ -149,10 +149,11 @@ namespace FourNature.model
             //List<Devis_articles> listArticleDevis = devis_articleDAO.selectAvecParam(numDevis);
             clientVue.ArcticleClientListBox.Items.Clear();
             List<Article> listArticle = articleDAO.selectAvecParam2(cli);
-            for(int i = 1; i < listArticle.Count() - 1 ;i++)
+            clientVue.remplirListView(listArticle);
+           /* for(int i = 1; i < listArticle.Count() - 1 ;i++)
             {
                 clientVue.ArcticleClientListBox.Items.Add(listArticle[i].Nom_article);
-            }            
+            }  */          
             //foreach (Article article in listArticle)
             //{
             //    clientVue.ArcticleClientListBox.Items.Add(article.Nom_article);
