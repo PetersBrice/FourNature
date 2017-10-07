@@ -167,7 +167,6 @@ namespace FourNature.model
             //{
             //    clientVue.ArcticleClientListBox.Items.Add(article.Nom_article);
             //}
-
         }
         public void listeCli()
         {
