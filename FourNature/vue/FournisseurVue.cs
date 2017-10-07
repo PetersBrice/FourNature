@@ -280,6 +280,9 @@ namespace FourNature.vue
                 listViewArticle.Items.Add(listItem);
             }
         }
-
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {            
+                Environment.Exit(0);
+        }
     }
 }

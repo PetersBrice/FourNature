@@ -47,6 +47,10 @@ namespace FourNature.vue
             
         
         }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
 
